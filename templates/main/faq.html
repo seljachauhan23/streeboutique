@@ -1,0 +1,147 @@
+{% extends "main/header_footer.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area" data-bg-image="{% static 'assets/images/shopping.gif' %}">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="breadcrumb-title">Faq</h2>
+                <!-- breadcrumb-list start -->
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Faq</li>
+                </ul>
+                <!-- breadcrumb-list end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+
+<!-- Faq Policy area start -->
+<div class="login-register-area pb-100px pt-100px faq-area">
+    <div class="container">
+        <div class="row">
+            <div class="ml-auto mr-auto col-lg-9">
+                <div class="checkout-wrapper">
+                    <div class="inner-descripe" data-aos="fade-up" data-aos-delay="200">
+                        <h4 class="title" style="color:#002d62;font-size:25px;height:auto;width:90%;text-align:center">streeboutique Provide Some Answer to Question <br> of Precious Customers</h4>
+                        
+                    </div>
+                    <div id="faq" class="panel-group">
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>1.</span> <a data-bs-toggle="collapse" href="#my-account-1" class="collapsed" aria-expanded="true">What is Cash on Delivery?</a></h3>
+                            </div>
+                            <div id="my-account-1" class="panel-collapse collapse show" data-bs-parent="#faq">
+                                <div class="panel-body">
+                                    Cash on Delivery is one of the payment methods for making purchases on Amazon.in. When you select Cash on Delivery as your payment method, you don't have to make any advance payment. You pay for your order only when you receive it. Click here to know more about Cash on Delivery.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>2.</span> <a data-bs-toggle="collapse" href="#my-account-2" aria-expanded="false" class="collapsed">How can I order the same items again?</a></h3>
+                            </div>
+                            <div id="my-account-2" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">Follow the steps below to order an item again -<br>
+                                    1. Go to Your Orders.<br>
+                                    2. Click on the Buy Again Tab. You will see a list of items you had previously purchased. Add to Cart the items you wish to purchase again.<br>
+                                    3. Go to the cart and follow the onscreen instruction to complete the order.<br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>3.</span> <a data-bs-toggle="collapse" href="#my-account-3">What about the quality of the products?</a></h3>
+                            </div>
+                            <div id="my-account-3" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">At streeboutique, we have stringent quality checks and ensure that we onboard only high-quality suppliers. In case, the quality is not up to the mark, we provide easy returns.
+                                    <br>
+                                    Further,  we actively take user feedback on product quality, post delivery. 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>4.</span> <a data-bs-toggle="collapse" href="#my-account-4">How do I check the current status of my order?</a></h3>
+                            </div>
+                            <div id="my-account-4" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">You can review the status of your orders and other related tracking information by visiting the "My Account" section. You can instantly see the status of a specific order and all your past orders.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>5.</span> <a data-bs-toggle="collapse" href="#my-account-5">Why is my Order not showing?</a></h3>
+                            </div>
+                            <div id="my-account-5" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">It generally takes 2-3 weeks for the product to be delivered from the order date. 
+                                    <br>
+                                    You can track your order in the "My Orders" Section. If it is still not showing, please drop an email to customer service at streeboutique20@gmail.com.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>6.</span> <a data-bs-toggle="collapse" href="#my-account-6">What if I have forgotten my account password?</a></h3>
+                            </div>
+                            <div id="my-account-6" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">While logging in to your account, you may use OTP option that will allow you to access your account. Alternatively, you may contact streeboutique support team to reset your account password.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>7.</span> <a data-bs-toggle="collapse" href="#my-account-7">How do I add items to my wishlist?</a></h3>
+                            </div>
+                            <div id="my-account-7" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">Go to 'My Wishlist' menu. 
+                                    <br>
+                                    Click on the 'Heart' to deselect it and remove the product from your wishlist.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>8.</span> <a data-bs-toggle="collapse" href="#my-account-8">How do I remove or delete items from my wishlist?</a></h3>
+                            </div>
+                            <div id="my-account-8" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">Go to 'My Wishlist' menu. <br> Click on the 'Heart' to deselect it and remove the product from your wishlist.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>9.</span> <a data-bs-toggle="collapse" href="#my-account-9">How do I cancel an order?</a></h3>
+                            </div>
+                            <div id="my-account-9" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">If you wish to cancel an order that has been shipped but has not yet been delivered, kindly refuse the shipment at the time of delivery.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="200">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>10.</span> <a data-bs-toggle="collapse" href="#my-account-10">How can I place International orders?</a></h3>
+                            </div>
+                            <div id="my-account-10" class="panel-collapse collapse" data-bs-parent="#faq">
+                                <div class="panel-body">Our products are available in only India. We are not sell our product in other countries.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formore">
+                            <p>Do you have another question, suggestion or complaint? <a href="{% url 'contact' %}">Get in touch</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Faq Policy area end -->
+
+{% endblock %}

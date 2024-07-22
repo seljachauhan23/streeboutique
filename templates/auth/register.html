@@ -1,0 +1,193 @@
+<html>
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content="Hmart-Smart Product eCommerce html Template">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        <!-- CSS
+        ============================================ -->
+        <link rel="stylesheet" href="{%static 'assets/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="{%static 'assets/css/font.awesome.css' %}" />
+        <link rel="stylesheet" href="{%static 'assets/css/pe-icon-7-stroke.css' %}" />
+        <link rel="stylesheet" href="{%static 'assets/css/animate.min.css' %}">
+        <link rel="stylesheet" href="{%static 'assets/css/swiper-bundle.min.css' %}">
+        <link rel="stylesheet" href="{%static 'assets/css/venobox.css' %}">
+        <link rel="stylesheet" href="{%static 'assets/css/jquery-ui.min.css' %}">
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="{%static 'assets/css/style.css' %}">
+        <!-- Minify Version -->
+        <link rel="stylesheet" href="{%static 'assets/css/plugins.min.css' %}">
+        <link rel="stylesheet" href="{%static 'assets/css/style.min.css' %}">
+
+        <style>
+
+            .error
+            {
+                color:red;
+                font-size:18px;
+                
+            }
+            .container
+            {
+                display : flex;
+                width : 800px;
+                height : auto;
+           
+            }
+
+            .left-section,
+            .right-section
+            {
+                background-color : #fff;
+                padding : 20px;
+                border-radius : 10px;
+                box-shadow : 0 0 10px rgba(0, 0, 0, 1.0)
+            }
+
+            .left-section
+            {
+                background: #002D62;
+                
+            }
+
+            
+            .right-section
+            {
+                width : 500px;
+            }
+
+            h3
+            {
+                margin-bottom : 30px;
+                margin-left : 40%;
+                font-family : Segoe Print;
+                font-size : 30px;
+                font-weight: bold;
+                margin-top: 10px;
+                color:#002D62;
+            }
+
+            .img
+            {
+                height:350;
+                width:300;
+                margin-top:15%;
+                margin-left:10px;
+            }
+
+            .btn{
+                color: #002D62;
+                background: white;
+                border: 2px solid #002D62;
+                width: 100%;
+            }
+            .btn:hover{
+                background:#002D62;
+                color: white;
+            }
+
+            .heading
+            {
+                    margin-left:20%;
+                    height: 15%;
+                    width:auto;
+            }
+
+            input
+            {
+                border-radius:10px;
+            }
+
+
+
+        
+        </style>
+    </head>
+
+    <body>
+
+        <div class="head">
+            <h3>Registration</h3>
+            
+            <p class="heading">Join our street boutique community and unlock a world of style and indiiduality with just a click.</p>
+
+         </div>
+
+        <div class="container">
+            <div class="left-section">
+                <img src="{% static 'assets/images/logo/header.png' %}" alt="" srcset=""  style = "height: 120px;width:120px; margin-left:30%">
+                <img class ="img" src="{% static 'assets/images/registration.gif' %}" alt="" srcset="" >
+            </div>
+            
+            <div class="right-section">
+            
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+
+                <input type="text" name="u_name" placeholder="Username*" style="margin-bottom:2px;"/>
+                {% if error.u_name %}
+                    <span class="error">{{error.u_name}}</span>
+                {% endif %}
+
+                <input type="text" name="f_name" placeholder="First name*" style="margin-bottom:2px; margin-top:20px;"/>
+                {% if error.f_name %}
+                    <span class="error">{{error.f_name}}</span>
+                {% endif %}
+
+                <input type="text" name="l_name" placeholder="Last name*" style="margin-bottom:2px; margin-top:20px;"/>
+                {% if error.l_name %}
+                    <span class="error">{{error.l_name}}</span>
+                {% endif %}
+
+                <input name="email" placeholder="Email*" type="email" style="margin-bottom:2px; margin-top:20px;"/>
+                {% if error.email %}
+                    <span class="error">{{error.email}}</span>
+                {% endif %}
+
+                <input type="password" name="password" placeholder="Password*" style="margin-bottom:2px; margin-top:20px;"/>
+                {% if error.password %}
+                    <span class="error">{{error.password}}</span>
+                {% endif %}
+
+                <input type="password" name="c_password" placeholder="Confirm Password*" style="margin-bottom:2px; margin-top:20px;"/>
+                {% if error.c_password %}
+                    <span class="error">{{error.c_password}}</span>
+                {% endif %}<br><br>
+                
+                <div class="button-box">
+                    <button type="submit" class="btn"><span>Register</span></button>
+                </div>
+            </form>
+            </div>
+        </div>
+
+    
+
+
+        <script src="{%static 'assets/js/vendor/bootstrap.bundle.min.js' %}"></script>
+        <script src="{%static 'assets/js/vendor/jquery-3.6.0.min.js' %}"></script>
+        <script src="{%static 'assets/js/vendor/jquery-migrate-3.3.2.min.js' %}"></script>
+        <script src="{%static 'assets/js/vendor/modernizr-3.11.2.min.js' %}"></script>
+        <script src="{%static 'assets/js/plugins/jquery.countdown.min.js' %}"></script>
+        <script src="{%static 'assets/js/plugins/swiper-bundle.min.js' %}"></script>
+        <script src="{%static 'assets/js/plugins/scrollUp.js' %}"></script>
+        <script src="{%static 'assets/js/plugins/venobox.min.js' %}"></script>
+        <script src="{%static 'assets/js/plugins/jquery-ui.min.js' %}"></script>
+        <script src="{%static 'assets/js/plugins/mailchimp-ajax.js' %}"></script>
+
+        <!-- Minify Version -->
+        <script src="{%static 'assets/js/vendor.min.js' %}"></script>
+        <script src="{%static 'assets/js/plugins.min.js' %}"></script>
+        <script src="{%static 'assets/js/main.min.js' %}"></script>
+
+        <!--Main JS (Common Activation Codes)-->
+        <script src="{%static 'assets/js/main.js' %}"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+{% extends "main/header_footer.html" %}
+
+{% block content %}
+
+<div class="shop-category-area pt-100px pb-100px">
+    <div class="container">
+        <div class="row">
+
+            {% for products in search_product %}
+
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                                            <!-- Single Prodect -->
+                    <div class="product">
+                        <span class="badges">
+                            <span class="new">{{products.condition}}</span>
+                        </span>
+                        <div class="thumb">
+                            <a href="/product/{{products.id}}" class="image">
+                                <img src="/{{products.image}}" alt="Product" height=290 />
+                                <img class="hover-image" src="/{{products.image}}" alt="Product" />
+                            </a>
+                        </div>
+                        <div class="content">
+                            <span class="category"><a href="#">{{products.categories}}</a></span>
+                            <h5 class="title">
+                                <a href="single-product.html">{{products.name | truncatewords:3}}</a>
+                            </h5>
+                            <span class="price">
+                                <span class="new">Rs.{{products.price}}/-</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                                            
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

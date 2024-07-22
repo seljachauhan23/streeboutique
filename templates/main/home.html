@@ -1,0 +1,726 @@
+{% extends "main/header_footer.html" %}
+
+
+
+{% block content %}
+
+{% load static %}
+
+<style>
+
+    .img:hover{
+        transform: scale(1.2);
+    }
+    
+    .zoom:hover{
+        transform: scale(0.8);
+    }
+
+</style>
+
+
+
+
+<!-- Hero/Intro Slider Start -->
+<div class="section ">
+    <div class="hero-slider swiper-container slider-nav-style-1 slider-dot-style-1">
+        <!-- Hero slider Active -->
+        <div class="swiper-wrapper">
+            <!-- Single slider item -->
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1">
+                <div class="container h-100">
+                    <div class="row h-100 flex-row-reverse">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                            <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                <h2 class="title-1">Explore Amazing Fashionable Ethnic <br>
+                                </h2>
+                                <span class="price">
+                                    <span class="mini-title">on streeboutique</span>
+                                <span class="amount">RS. 11479/-</span>
+                                </span>
+                                <div style="display: flex;">
+                                    <a href="product/{{4}}" class="btn btn-primary text-capitalize">Shop Now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'about_us' %}" class="btn btn-primary text-capitalize">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                            <div class="show-case">
+                                <div class="hero-slide-image slider-2">
+                                    <img src="{% static 'assets/images/header/s1.png' %}" alt="" height=500 width=400 />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single slider item -->
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1">
+                <div class="container h-100">
+                    <div class="row h-100 flex-row-reverse">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                            <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                <h2 class="title-1">Explore Amazing Fashionable Western <br>
+                                </h2>
+                                <span class="price">
+                                    <span class="mini-title">on streeboutique</span>
+                                <span class="amount">RS. 500/-</span>
+                                </span>
+                                <div style="display: flex;">
+                                    <a href="product/{{24}}" class="btn btn-primary text-capitalize">Shop Now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'about_us' %}" class="btn btn-primary text-capitalize">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                            <div class="show-case">
+                                <div class="hero-slide-image slider-2">
+                                    <img src="{% static 'assets/images/header/hm1.png' %}" alt="" height=500 width=400 />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single slider item -->
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1">
+                <div class="container h-100">
+                    <div class="row h-100 flex-row-reverse">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                            <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                <h2 class="title-1">Explore Amazing Fashionable Jewellerys <br>
+                                </h2>
+                                <span class="price">
+                                    <span class="mini-title">on streeboutique</span>
+                                <span class="amount">RS. 5555/-</span>
+                                </span>
+                                <div style="display: flex;">
+                                    <a href="product/{{16}}" class="btn btn-primary text-capitalize">Shop Now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'about_us' %}" class="btn btn-primary text-capitalize">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                            <div class="show-case">
+                                <div class="hero-slide-image slider-2">
+                                    <img src="{% static 'assets/images/header/hm2.png' %}" alt="" height=500 width=400 />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single slider item -->
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1">
+                <div class="container h-100">
+                    <div class="row h-100 flex-row-reverse">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                            <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                <h2 class="title-1">Explore Amazing Fashionable Footwear <br>
+                                </h2>
+                                <span class="price">
+                                    <span class="mini-title">on streeboutique</span>
+                                <span class="amount">RS. 999/-</span>
+                                </span>
+                                <div style="display: flex;">
+                                    <a href="product/{{23}}" class="btn btn-primary text-capitalize">Shop Now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'about_us' %}" class="btn btn-primary text-capitalize">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                            <div class="show-case">
+                                <div class="hero-slide-image slider-2">
+                                    <img src="{% static 'assets/images/header/hm3.png' %}" alt="" height=500 width=400 />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single slider item -->
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1">
+                <div class="container h-100">
+                    <div class="row h-100 flex-row-reverse">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                            <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                <h2 class="title-1">Explore Amazing Fashionable Bag <br>
+                                </h2>
+                                <span class="price">
+                                    <span class="mini-title">on streeboutique</span>
+                                <span class="amount">RS. 1119/-</span>
+                                </span>
+                                <div style="display: flex;">
+                                    <a href="product/{{30}}" class="btn btn-primary text-capitalize">Shop Now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'about_us' %}" class="btn btn-primary text-capitalize">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                            <div class="show-case">
+                                <div class="hero-slide-image slider-2">
+                                    <img src="{% static 'assets/images/header/hm4.png' %}" alt="" height=500 width=400 />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single slider item -->
+            <div class="hero-slide-item slider-height-2 swiper-slide bg-color1">
+                <div class="container h-100">
+                    <div class="row h-100 flex-row-reverse">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                            <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                <h2 class="title-1">Explore Amazing Gorious Beauties <br>
+                                </h2>
+                                <span class="price">
+                                    <span class="mini-title">on streeboutique</span>
+                                <span class="amount">RS. 4587/-</span>
+                                </span>
+                                <div style="display: flex;">
+                                    <a href="product/{{26}}" class="btn btn-primary text-capitalize">Shop Now</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="{% url 'about_us' %}" class="btn btn-primary text-capitalize">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                            <div class="show-case">
+                                <div class="hero-slide-image slider-2">
+                                    <img src="{% static 'assets/images/header/hm5.png' %}" alt="" height=500 width=400 />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-buttons">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+<!-- Hero/Intro Slider End -->
+
+<!-- categories Area Start -->
+<div class="cat" >
+    <div class="row">
+        <div class="col-12">
+            <div class="section-title text-center">
+                <h2 class="title" style="margin-top:5%;">Our Top Categories</h2>
+                <p>"Discover StreeBoutique's top product categories, blending elegance with contemporary style choices."</p>
+            </div>
+        </div>
+    </div>
+    <div class="inner-cat" style="margin-left:5%">
+        <a href="{% url 'shop' %}"> <img class="img" src="{% static 'assets/images/1.png' %}" alt="" height=180 width=180/></a>
+        <a href="{% url 'shop' %}"><img class="img" src="{% static 'assets/images/2.png' %}" alt="" height=180 width=180/></a>
+        <a href="{% url 'shop' %}"><img class="img" src="{% static 'assets/images/3.png' %}" alt="" height=180 width=180/></a>
+        <a href="{% url 'shop' %}"><img class="img" src="{% static 'assets/images/4.png' %}" alt="" height=180 width=180/></a>
+        <a href="{% url 'shop' %}"><img class="img" src="{% static 'assets/images/5.png' %}" alt="" height=180 width=180/></a>
+        <a href="{% url 'shop' %}"><img class="img" src="{% static 'assets/images/6.png' %}" alt="" height=180 width=180/></a>
+    </div>
+</div>
+<!-- categories Area end -->
+
+<!-- Banner Area Start -->
+<div class="banner-area style-two pt-100px pb-100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="single-banner nth-child-2 mb-lm-30px">
+                    <img src="{% static 'assets/images/b12.jpg' %}" alt="" height=400>
+                    <div class="banner-content nth-child-3">
+                        <h3 class="title">Charm Bracelet</h3>
+                        <span class="category">Rs.3999/-</span>
+                        <a href="product/{{29}}" class="shop-link">Shop Now <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="single-banner nth-child-2">
+                    <img src="{% static 'assets/images/r3.jpg' %}" alt="" height=400>
+                    <div class="banner-content nth-child-2">
+                        <h3 class="title">Silver Couple Rings</h3>
+                        <span class="category">Rs.1999/-</span>
+                        <a href="product/{{7}}" class="shop-link">Shop Now <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
+ <!-- Feature Area Srart -->
+<div class="feature-area pt-100px pb-100px" style="margin-top:-10%;">
+    <div class="container">
+        <div class="feature-wrapper">
+            <div class="single-feture-col mb-md-30px mb-lm-30px">
+                <!-- single item -->
+                <div class="single-feature" >
+                    <div class="feature-icon" style="background:#cacfd2">
+                        <img src="{%static 'assets/images/24-hours-day-night.png'%} " alt="" height=50 width=50>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">24/7 Hour services</h4>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- single item -->
+            <div class="single-feture-col mb-md-30px mb-lm-30px">
+                <div class="single-feature">
+                    <div class="feature-icon" style="background:#cacfd2">
+                        <img src="{%static 'assets/images/cod.png'%} " alt="" height=50 width=50>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Case On Delivery on Each Item</h4>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- single item -->
+            <div class="single-feture-col">
+                <div class="single-feature">
+                    <div class="feature-icon" style="background:#cacfd2">
+                        <img src="{%static 'assets/images/cancel.png'%} " alt="" height=50 width=50>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Easy to Order Cancel</h4>
+                        
+                    </div>
+                </div>
+                <!-- single item -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature Area End -->
+
+<!-- video Area Start -->
+
+{% comment %} <div class="video">
+    <center>
+        <img src="{% static 'assets/images/slide1.gif' %}" height=400 style="border: 2px solid #002D62;margin-bottom: 5%;">
+    </center>    
+</div> {% endcomment %}
+
+<div class="col-lg-12 col-xl-12 col-md-6 col-sm-12 col-xs-12">
+    
+    <div style="text-align: center; padding: 0 15px;">
+        <center>
+            <img src="{% static 'assets/images/slide1.gif' %}" style="max-width: 100%; height: auto; border: 2px solid #002D62; margin-bottom: 5%; display: block;">
+        </center>
+    </div>
+
+</div>
+
+<!-- video Area end -->
+
+<!-- Product Area Start -->
+<div class="product-area pb-100px">
+    <div class="container">
+        <!-- Section Title & Tab Start -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="title">New Products</h2>
+                    <p>Introducing the latest addition to streeboutique's collection: where style meets sophistication.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section Title & Tab End -->
+        <div class="row">
+            <div class="col">
+                <div class="row mb-n-30px">
+                    {% for products in product %}
+                    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                        <!-- Single Prodect -->
+                        <div class="product">
+                            <span class="badges">
+                                <span class="new">{{products.condition}}</span>
+                                {% if products.stock ==  OutOfStock %}
+                                <span class="new">{{products.stock}}</span>
+                                {% endif %}
+                            </span>
+                            <div class="thumb">
+                                <a href="product/{{products.id}}" class="image">
+                                    <img src={{products.image}} alt="Product" height=290/>
+                                    <img class="hover-image" src={{products.image}} alt="Product" />
+                                </a>
+                            </div>
+                            <div class="content">
+                                <span class="category"><a href="product/{{products.id}}">{{products.categories}}</a></span>
+                                <h5 class="title"><a href="product/{{products.id}}">{{products.name |truncatewords:3}}
+                                    </a>
+                                </h5>
+                                <span class="price">
+                                    <span class="new">Rs.{{products.price}}</span>
+                                </span>
+                            </div>
+                            <div class="actions">
+                                        <button title="View Product" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart-{{forloop.counter}}"><i
+                                            class="fas fa-arrow-alt-circle-up"></i></button>
+                                        <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist-{{forloop.counter}}"><i
+                                                class="pe-7s-like"></i></button>
+                                        <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal-{{forloop.counter}}"><i class="pe-7s-look"></i></button>
+                                        
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Product Area End -->
+
+<!-- sale Area Start -->
+<div class="product-area pb-100px">
+    <div class="container">
+        <!-- Section Title & Tab Start -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="title">Sale product</h2>
+                    <p>Discover great deals on stylish finds at streeboutique's sale.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section Title & Tab End -->
+        <div class="row">
+            <div class="col">
+                <div class="row mb-n-30px">
+                    {% for products in sale_products %}
+                    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                        <!-- Single Product -->
+                        <div class="product">
+                            <span class="badges">
+                                <span class="new">{{products.condition}}</span>
+                                {% if products.stock ==  'Out Of Stock' %}
+                                <span class="new">{{products.stock}}</span>
+                                {% endif %}
+                            </span>
+                            <div class="thumb">
+                                <a href="product/{{products.id}}" class="image">
+                                    <img src={{products.image}} alt="Product" height=290/>
+                                    <img class="hover-image" src={{products.image}} alt="Product" />
+                                </a>
+                            </div>
+                            <div class="content">
+                                <span class="category"><a href="product/{{products.id}}">{{products.categories}}</a></span>
+                                <h5 class="title"><a href="product/{{products.id}}">{{products.name |truncatewords:3}}
+                                    </a>
+                                </h5>
+                                <span class="price">
+                                    {% if products.condition == 'Sale' %}
+                                    Rs.<del><span class="new">{{products.price}}</span></del>
+                                        <span class="new">{{products.discount}}</span>
+                                    {% endif %}
+                                    
+                                </span>
+                            </div>
+                            <div class="actions">
+                                        <button title="View Product" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart-{{forloop.counter}}"><i
+                                            class="fas fa-arrow-alt-circle-up"></i></button>
+                                        <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist-{{forloop.counter}}"><i
+                                                class="pe-7s-like"></i></button>
+                                        <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal-{{forloop.counter}}"><i class="pe-7s-look"></i></button>
+                                        
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+              
+    </div>
+</div>
+<!-- sale Area End -->
+
+
+<!-- 50% Area Start -->
+<div class="product-area pb-100px">
+    <div class="container">
+        <!-- Section Title & Tab Start -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="title">50% OFF product</h2>
+                    <p>Revamp your wardrobe with streeboutique's 50% off, where style meets savings.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section Title & Tab End -->
+        <div class="row">
+            <div class="col">
+                <div class="row mb-n-30px">
+                    {% for products in fifty_products %}
+                    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                        <!-- Single Product -->
+                        <div class="product">
+                            <span class="badges">
+                                <span class="new">{{products.condition}}</span>
+                                
+                                {% if products.stock ==  'Out Of Stock' %}
+                                <span class="new">{{products.stock}}</span>
+                                {% endif %}
+                            </span>
+                            <div class="thumb">
+                                <a href="product/{{products.id}}" class="image">
+                                    <img src={{products.image}} alt="Product" height=290/>
+                                    <img class="hover-image" src={{products.image}} alt="Product" />
+                                </a>
+                            </div>
+                            <div class="content">
+                                <span class="category"><a href="product/{{products.id}}">{{products.categories}}</a></span>
+                                <h5 class="title"><a href="product/{{products.id}}">{{products.name |truncatewords:3}}
+                                    </a>
+                                </h5>
+                                <span class="price">
+                                    {% if products.condition == '50% Off' %}
+                                    Rs.<strike><span class="new">{{products.price}}</span></strike>
+                                        <span class="new">{{products.discount}}</span>
+                                    {% endif %}
+                                    
+                                </span>
+                            </div>
+                            <div class="actions">
+                                        <button title="View Product" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart-{{forloop.counter}}"><i
+                                            class="fas fa-arrow-alt-circle-up"></i></button>
+                                        <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist-{{forloop.counter}}"><i
+                                                class="pe-7s-like"></i></button>
+                                        <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal-{{forloop.counter}}"><i class="pe-7s-look"></i></button>
+                                        
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+              
+    </div>
+</div>
+<!-- 50% Area End -->
+
+<!-- 75% Area Start -->
+<div class="product-area pb-100px">
+    <div class="container">
+        <!-- Section Title & Tab Start -->
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="title">75% OFF product</h2>
+                    <p>Transform your style effortlessly with streeboutique's phenomenal 75% off deal!</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section Title & Tab End -->
+        <div class="row">
+            <div class="col">
+                <div class="row mb-n-30px">
+                    {% for products in seventy_five_products %}
+                    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                        <!-- Single Product -->
+                        <div class="product">
+                            <span class="badges">
+                                <span class="new">{{products.condition}}</span>
+                                
+                                {% if products.stock ==  'Out Of Stock' %}
+                                <span class="new">{{products.stock}}</span>
+                                {% endif %}
+                            </span>
+                            <div class="thumb">
+                                <a href="product/{{products.id}}" class="image">
+                                    <img src={{products.image}} alt="Product" height=290/>
+                                    <img class="hover-image" src={{products.image}} alt="Product" />
+                                </a>
+                            </div>
+                            <div class="content">
+                                <span class="category"><a href="product/{{products.id}}">{{products.categories}}</a></span>
+                                <h5 class="title"><a href="product/{{products.id}}">{{products.name |truncatewords:3}}
+                                    </a>
+                                </h5>
+                                <span class="price">
+                                    {% if products.condition == '75% Off' %}
+                                    Rs.<strike><span class="new">{{products.price}}</span></strike>
+                                        <span class="new">{{products.discount}}</span>
+                                    {% endif %}
+                                    
+                                </span>
+                            </div>
+                            <div class="actions">
+                                        <button title="View Product" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart-{{forloop.counter}}"><i
+                                            class="fas fa-arrow-alt-circle-up"></i></button>
+                                        <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist-{{forloop.counter}}"><i
+                                                class="pe-7s-like"></i></button>
+                                        <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal-{{forloop.counter}}"><i class="pe-7s-look"></i></button>
+                                        
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+              
+    </div>
+</div>
+<!-- 75% Area End -->
+
+
+
+<!-- Fashion Area Start -->
+{% comment %} <div class="fashion-area"  data-bg-image="{% static 'assets/images/background.jpg' %}">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 text-center">
+                <h2 class="title"> <span>Smart Fashion</span> With streeboutique </h2>
+                <a href="{% url 'login' %}" class="btn btn-primary text-capitalize m-auto" style="height:60px; width:200px;">Login with Buy, Smile, Repeat</a>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<div class="fashion-area" data-bg-image="{% static 'assets/images/background.jpg' %}">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 text-center">
+                <h2 class="title"><span>Smart Fashion</span> With streeboutique</h2>
+                <a href="{% url 'login' %}" class="btn btn-primary text-capitalize m-auto mb-3 mb-sm-0"
+                   style="height: 60px; width: 200px; padding: 10px;">Login with Buy, Smile, Repeat</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fashion Area End -->
+
+<!-- price wise Area start -->
+
+
+<div class="price container">
+    <div class="row">
+        <div class="col-12">
+            <div class="section-title text-center">
+                <h2 class="title" style="margin-top:5%;">Shop in Your Budget</h2>
+                <p>streeboutique: Style that fits your budget, without compromising on elegance.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row inner-price justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="/shop/?price_id=2">
+                <img class="zoom img-fluid" src="{% static 'assets/images/p1/1.png' %}" alt="" style="border: 2px solid #002D62; border-radius: 20px;">
+            </a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="/shop/?price_id=6">
+                <img class="zoom img-fluid" src="{% static 'assets/images/p1/2.png' %}" alt="" style="border: 2px solid #002D62; border-radius: 20px; margin-top: 10px;">
+            </a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="/shop/?price_id=7">
+                <img class="zoom img-fluid" src="{% static 'assets/images/p1/3.png' %}" alt="" style="border: 2px solid #002D62; border-radius: 20px; margin-top: 10px;">
+            </a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="/shop/?price_id=8">
+                <img class="zoom img-fluid" src="{% static 'assets/images/p1/4.png' %}" alt="" style="border: 2px solid #002D62; border-radius: 20px; margin-top: 10px;">
+            </a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="/shop/?price_id=9">
+                <img class="zoom img-fluid" src="{% static 'assets/images/p.gif' %}" alt="" style="border: 2px solid #002D62; border-radius: 20px; margin-top: 10px;">
+            </a>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+            <a href="/shop/?price_id=10">
+                <img class="zoom img-fluid" src="{% static 'assets/images/p1/6.png' %}" alt="" style="border: 2px solid #002D62; border-radius: 20px; margin-top: 10px;">
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- price wise Area end -->
+
+
+<!-- Brand area start -->
+<div class="brand container">
+    <div class="row">
+        <div class="col-12">
+            <div class="section-title text-center">
+                <h2 class="title" style="margin-top:5%;">We Work With Top Brands</h2>
+                <p>We partner with top brands to elevate your style at streeboutique</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <img src="{% static 'assets/images/brand.gif' %}" class="img-fluid"  alt="Top Brands" style="border: 2px solid #002d62; border-radius: 10px; margin-left: 10%;" >
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+            <img src="{% static 'assets/images/woman.png' %}" class="img-fluid" alt="Woman Image">
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+<script>
+    function Speech() {
+        if ('speechSynthesis' in window) {
+            // Wait for voices to be loaded
+            window.speechSynthesis.onvoiceschanged = function() {
+                // Create a new instance of the SpeechSynthesisUtterance object
+                var message = new SpeechSynthesisUtterance();
+    
+                // Set the text to be spoken
+                message.text = "welcome to streeboutique where You meet fashion ";
+    
+                // Set the voice to be used (optional)
+                var voices = window.speechSynthesis.getVoices();
+    
+                // Find a male voice
+                var maleVoice = voices.find(function(voice) {
+                    return voice.name.includes('Female');
+                });
+    
+                // Set the male voice (if found), otherwise use the first available voice
+                message.voice = maleVoice || voices[2];
+    
+                // Set other options (optional)
+                message.volume = 1; // Range from 0 to 1
+                message.rate = 1; // Range from 0.1 to 10
+                message.pitch = 1; // Range from 0 to 2
+    
+                // Speak the text
+                window.speechSynthesis.speak(message);
+            };
+        } else {
+            console.log('Speech synthesis not supported');
+        }
+    }
+
+    Speech();
+
+</script>
+
+<!-- Brand area end -->
+{% endblock %}

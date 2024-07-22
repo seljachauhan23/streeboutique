@@ -1,0 +1,116 @@
+{% extends "main/header_footer.html." %}
+
+{% block content %}
+
+{% load static %}
+
+<style>
+
+    .error
+    {
+        color:red;
+        font-size:18px;
+        
+    }
+
+</style>
+
+  <!-- Contact Area Start -->
+  <div class="contact-area">
+    <div class="container">
+        <div class="contact-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-form">
+                        <div class="contact-title mb-30">
+                            <h2 class="title">Send A Query</h2>
+                        </div>
+                        <form class="contact-form-style"  action="/contact/" method="post">
+                             {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input name="name" placeholder="Name*" type="text" style="margin-bottom:2px;" value="{{ name|default_if_none:'' }}"/>
+                                    {% if error.name %}
+                                    <span class="error">{{error.name}}</span>
+                                    {% endif %}
+                                </div>
+                                <div class="col-lg-6">
+                                    <input name="email" placeholder="Email*" type="" style="margin-bottom:2px;"  value="{{ email|default_if_none:'' }}"/>
+                                    {% if error.email %}
+                                    <span class="error">{{error.email}}</span>
+                                    {% endif %}
+                                </div>
+                                <div class="col-lg-12">
+                                    <input name="subject" placeholder="Subject*" type="text" style="margin-bottom:2px; margin-top:20px;" value="{{ subject|default_if_none:'' }}"/>
+                                    {% if error.subject %}
+                                    <span class="error">{{error.subject}}</span>
+                                    {% endif %}
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <textarea name="message" placeholder="Your Message*" style="margin-bottom:2px; margin-top:20px;" value="{{ message|default_if_none:'' }}"></textarea>
+                                    {% if error.message %}
+                                    <span class="error" style="margin-right:80%;">{{error.message}}</span>
+                                    {% endif %}
+                                    <button class="btn btn-primary" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                            
+                        </form>
+                        <p class="form-messege"></p>
+                    </div>
+                </div>
+                <div class="col-12" >
+                    <div class="contact-info">
+                        <div class="single-contact">
+                            <div class="icon-box">
+                                <img src="{% static 'assets/images/address.png' %}" alt="">
+                            </div>
+                            <div class="info-box" >
+                                <h5 class="title">Address</h5>
+                                <p>Veraval - Junagadh Highway
+                                    Opp. Realiance Petrol Pump
+                                    At: Chanduvav  <br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-contact">
+                            <div class="icon-box">
+                                <img src="{% static 'assets/images/phone.png' %}" alt="">
+                            </div>
+                            <div class="info-box">
+                                <h5 class="title">Phone No</h5>
+                                <p><a href="tel:0123456789">+012 345 67 89</a></p>
+                                <p><a href="tel:0123456789"></a></p>
+                            </div>
+                        </div>
+                        <div class="single-contact m-0">
+                            <div class="icon-box">
+                                <img src="{% static 'assets/images/email.png' %}" alt="">
+                            </div>
+                            <div class="info-box">
+                                <h5 class="title">Email/Web</h5>
+                                <p><a href="mailto:demo@example.com">streeboutique20@gmail.com</a></p>
+                                <p><a href="https://www.example.com/">streeboutique.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Area End -->
+<!-- map Area Start -->
+<div class="contact-map">
+    <div id="mapid">
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.708930595728!2d70.33133257352131!3d20.96420098999618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bfd324900000001%3A0xcbf6d904f72f2294!2sNarandas%20Jethalal%20Sonecha%20Management%20%26%20Technical%20Institute!5e0!3m2!1sen!2sin!4v1719920257518!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- map Area End -->
+
+
+{% endblock %}

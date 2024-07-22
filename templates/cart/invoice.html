@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+{% load static %}
+{% comment %} {% load cart_tag %} {% endcomment %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.username}} invoice</title>
+    <style>
+        
+        .container {
+            height: auto;
+            width: 75%;
+            background: white;
+            
+            margin-left: 15%;
+           
+        }
+        .row1 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background: #002D62;
+            color: white;
+            
+        }
+        .logo {
+            margin-right: 20px;
+        }
+        .contact-info {
+            margin-left : 10%;
+            letter-spacing: 5px;
+            font-size : 30px;
+            font-family  : Garamond;
+        }
+        .contact-info span {
+            margin-bottom: 5px;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            font-family  : Garamond;
+        }
+        .contact span {
+            margin-bottom: 5px;
+            margin-left : 75%;
+            height : 60%;
+            width : 100%;
+        }
+
+        .row2
+        {
+            height : 30%;
+        }
+
+        h2
+        {
+            color : #002D62;
+            font-family  : Garamond;
+            font-size : 40px;
+            margin-top : 3%;
+            margin-left : 45%;
+        }
+
+        .row3
+        {
+            height : 30%;
+        }
+
+        .p
+        {
+            margin-left : 20%;
+            font-size : 18px;
+            font-family:Consolas;
+            font-weight : bold;
+            color : #17202a
+        }
+
+        .row4
+        {
+            height : 30%;
+            display : flex;
+            
+        }
+
+        .details
+        {
+            display : flex;
+            margin-left : 25%;
+            border : 1px solid #002D62;
+            width : 50%;
+            padding : 10px;
+        }
+
+        .p1
+        {
+            color : black;
+            font-family:Consolas;
+            font-size : 20px;
+            margin-left : 2%;
+            
+        }
+
+        .p1 span
+        {
+            font-weight : bold;
+        }
+
+        .p2 span
+        {
+            font-weight : bold;
+        }
+
+        .p2
+        {
+            color : black;
+            font-family:Consolas;
+            font-size : 20px;
+            margin-left : 5%;
+        }
+
+        h3
+        {
+            margin-left : 25%;
+            margin-top : 3%;
+            font-size : 30px;
+            font-weight : bold;
+            font-family  : Garamond;
+            color :#002D62;
+            
+        }
+
+        .row5
+        {
+            height : 30%;
+            display : flex;
+            margin-top : 2%;
+        }
+
+        .bill
+        {
+            margin-left : 18%;
+        }
+
+        .ship
+        {
+            margin-left : 10%;
+        }
+
+        .p3
+        {
+            margin-left : 23%;
+            font-family  : Consolas;
+            font-size : 15px;
+            width : 350px;
+        }
+
+        .p4
+        {
+            margin-left : 18%;
+            font-family  : Consolas;
+            font-size : 15px;
+            width : 350px;
+        }
+
+        mark
+        {
+            color : white;
+            background : #002D62;
+        }
+
+        .btn{
+            color: #002D62;
+            background: white;
+            border: 2px solid #002D62;
+            width: 20%;
+            height: 50px;
+            margin-left: 40%;
+            margin-top: 3%;
+            
+            
+        }
+
+        .btn:hover{
+            background:#002D62;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="main">
+    
+    <div class="container">
+        <div class="row1">
+            <img src="{% static 'assets/images/logo/header.png' %}" alt="" class="logo" height="150" width="150">
+            <div class="contact-info">
+                <span>streeboutique</span>
+            </div>
+            <div class="contact">
+                <span>Ph. : 1010101010</span>
+                <span>Email : streeboutique20@gmail.com</span>
+            </div>
+        </div>
+
+        </div class="row2">
+            <h2>Invoice</h2>
+        </div>
+
+        </div class="row3">
+            <p class="p">{{ order.f_name }} {{ order.l_name }}, Your
+            Order <mark> #{{order.id}} </mark> was placed on <mark> {{order.date}} </mark> and is currently <mark> {{order.status}} </mark>.</p>
+        </div>
+
+        </div class="row4">
+            <h3>Order Details</h3>
+            <div class="details">
+                {% for cart in cart%}
+                <p class="p1">
+                    <span>Product</span><br><br>
+                    {{cart.name}}<br>
+                    With {{cart.quantity}} Quantity <br><br>
+                    Subtotal<br><br>
+                    Shopping <br><br>
+                    GST<br><br>
+                    Payment method <br><br>
+                    Total 
+                </p>
+
+                <p class="p2">
+                    <span>Total</span><br><br><br>
+                    {{cart.sbt}}<br><br>
+                    {{cart.sbt}}<br><br>
+                    100<br><br>
+                    (20%){{gst}}<br><br>
+                    Case on delivery <br><br>
+                    <mark>Rs.{{mainSubTotal}}/-  </mark> 
+                </p>
+                {% endfor %}                            
+            </div>
+        </div>
+
+        <div class="row5">
+            <div class="bill">
+                <h3>Billing <br> Address</h3>
+                <p class="p3">
+                {{ order.f_name }} {{ order.l_name }}<br>
+                {{order.address}}<br>
+                {{order.city}}-{{order.post_code}}<br>
+                {{order.state}}<br>
+                {{order.phone}}<br>
+                {{order.email}}
+                </p>
+            </div>
+
+            <div class="ship">
+                <h3>Shipping <br> Address</h3>
+                <p class="p4">
+                {{ order.f_name }} {{ order.l_name }}<br>
+                {{order.address}}<br>
+                {{order.city}}-{{order.post_code}}<br>
+                {{order.state}}
+                </p>
+            </div>
+            
+        </div>
+            <button onclick="window.print()" class="btn">Print Invoice</button>
+    </div><br><br>
+</div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+{% extends "main/header_footer.html" %}
+
+
+{% block content %}
+
+<style>
+
+    .btn{
+        color: #002D62;
+        background: white;
+        border: 2px solid #002D62;
+        width: 150%;
+        margin-top:3%;
+    }
+
+    .btn:hover{
+        background:#002D62;
+        color: white;
+    }
+
+</style>
+
+<!-- Product Details Area Start -->
+
+
+<div class="product-details-area pt-100px pb-100px">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 col-xs-12 mb-lm-30px mb-md-30px mb-sm-30px">
+                <!-- Swiper -->
+                <div class="swiper-container zoom-top">
+                    <div class="swiper-wrapper">
+                        {% for i in prod.images_set.all %}
+                        <div class="swiper-slide">
+                            <img class="img-responsive m-auto" src="/{{i.image}}" alt="" height=500>
+                            <a class="venobox full-preview" data-gall="myGallery" href="/{{i.image}}">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                                <img class="img-responsive m-auto" src="/{{i.image}}" alt="">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="swiper-container mt-20px zoom-thumbs slider-nav-style-1 small-nav">
+                    <div class="swiper-wrapper">
+                        {% for i in prod.images_set.all %}
+                        <div class="swiper-slide">
+                            <img class="img-responsive m-auto" src="/{{i.image}}" alt="">
+                            
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-buttons">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-xs-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="product-details-content quickview-content ml-25px">
+                    <h2>{{prod.name}}</h2>
+                    <div class="pricing-meta">
+                        <ul class="d-flex">
+                            <li class="new-price">Rs.{{prod.price}}/-</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="mt-30px">{{prod.description | truncatewords:40 | safe}}</p>
+                    <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
+                        <span>SKU:</span>
+                        <ul class="d-flex">
+                            <li>
+                                <a href="#">{{prod.u_id}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
+                        <span>Categories: </span>
+                        <ul class="d-flex">
+                            <li>
+                                <a href="#">{{prod.categories}}</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
+                        <span>Tags: </span>
+                        
+                        <ul class="d-flex">
+                            <li>
+                                {% for i in prod.tag_set.all %}
+                                <a href="#">{{i.name}}, </a>
+                                {% endfor %}
+                            </li>
+                            
+                        </ul> 
+                    </div>
+                    
+                   <form method="post" action="{% url 'cart_add' id=prod.id %}">
+                    {% csrf_token %}
+                    <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
+                        <ul class="d-flex">
+                            {% if prod.size_set.all %}
+                                <li id="size1">
+                                    <span>Size : </span>
+                                    <select name="size">
+                                        <option disabled selected>Select Size</option>
+                                        {% for size in prod.size_set.all %}
+                                        {% if size.id == 5 %}
+                                        <script>document.getElementById('size1').hidden = true; </script>
+                                            {% endif %}
+                                            <option value="{{ size.id }}">{{ size.size }}</option>
+                                        {% endfor %}
+                                    </select> 
+                                </li>
+                            {% endif %}
+                        </ul> 
+                    </div>
+                    
+                    
+                    <div class="pro-details-categories-info pro-details-same-style d-flex m-0">
+                        <ul class="d-flex">
+                            {% if prod.size_set.all %}
+                                <li id="color">
+                                    <span>Color : </span>
+                                    <select name="product_color">
+                                        <option disabled selected>Select Color</option>
+                                        {% for color in prod.product_color_set.all %}
+                                        {% if color.id == 4 %}
+                                        <script>document.getElementById('color').hidden = true; </script>
+                                            {% endif %}
+                                            <option value="{{ color.id }}">{{ color.color }}</option>
+                                        {% endfor %}
+                                    </select> 
+                                </li>
+                            {% endif %}
+                            {% if prod.stock == 'Out Of Stock' %}
+                            <span>Stock : </span><span style="color: red;">Out Of stock</span>
+                            {% endif %}
+                        </ul> 
+                    </div>
+                    
+                    {% comment %} {% for i in product %} {% endcomment %}
+                    <div class="pro-details-quality">
+                        
+                        <div class="pro-details-cart">
+                            {% if prod.stock == 'Out Of Stock' %}
+                            <!-- Product is out of stock -->
+                            <input type="submit" value="Add to cart" class="btn" name="submit" disabled>
+                            {% elif prod.stock == "In Stock" %}
+                            <input type="submit" value="Add to cart" name="submit" class="btn">
+                            {% endif %}
+
+                            {% comment %} <a href = "{% url 'cart_add' id=prod.id %}"> <button class="add-cart"> Add To
+                                Cart</button></a> {% endcomment %}
+                        </div>
+                        <div class="pro-details-compare-wishlist pro-details-wishlist " style= "margin-left : 10%;margin-top :1.8%">
+                            <a href="{% url 'add_to_wishlist' prod.id %}"><i class="pe-7s-like"></i></a>
+                        </div>
+                        
+                    </div>
+                </form>
+                    {% comment %} {% endfor %} {% endcomment %}
+                </div>
+                <!-- product details description area start -->
+                <div class="description-review-wrapper">
+                    <div class="description-review-topbar nav">
+                        <button data-bs-toggle="tab" data-bs-target="#des-details2">Information</button>
+                        <button class="active" data-bs-toggle="tab" data-bs-target="#des-details1">Description</button>
+                        <a href="{% url 'shop' %}"><button  data-bs-target="#des-details3">Shop More</button></a>
+                    </div>
+                    <div class="tab-content description-review-bottom">
+                        <div id="des-details2" class="tab-pane">
+                            <div class="product-anotherinfo-wrapper text-start">
+                                <ul>
+                                    <li>{{prod.information | safe }}</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="des-details1" class="tab-pane active">
+                            <div class="product-description-wrapper">
+                                <p>{{prod.description | safe }}</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- product details description area end -->
+               
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+{% endblock %}

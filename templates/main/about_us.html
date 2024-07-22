@@ -1,0 +1,175 @@
+{% extends "main/header_footer.html" %}
+
+{% block content %}
+
+{% load static %}
+<!-- breadcrumb-area start -->
+<div class="breadcrumb-area" data-bg-image="{% static 'assets/images/shopping.gif' %}">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="breadcrumb-title">About Us</h2>
+                <!-- breadcrumb-list start -->
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item active">About Us</li>
+                </ul>
+                <!-- breadcrumb-list end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb-area end -->
+<!-- About section Start -->
+<div class="about-area pt-100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="about-wrapper text-center">
+                    <div class="about-contant">
+                        <h2 class="title">
+                            <span>Smart Fashion </span>
+                            With Stree Boutique
+                        </h2>
+                        <p style="text-align:left;">
+                            Welcome to Streeboutique, where style meets attitude. Nestled in the heart of the city, Streeboutique caters exclusively to the modern, confident woman who embraces her individuality.
+                            <br>
+                            From sophisticated office attire to glamorous evening wear and casual weekend staples, Streeboutique offers a diverse range of fashion choices that cater to every aspect of a woman's life. 
+                            <br>
+                            At Streeboutique, we believe that fashion is more than just clothing—it's a form of expression. That's why our collections are carefully curated to reflect the latest trends while maintaining a timeless appeal.
+                            <br>
+                            Step into Streeboutique and discover a world where fashion meets passion, where every piece tells a story, and where your style journey begins.
+                        <p>
+                        </div>
+                        <div class="promo-video" style="margin-top: 2.5%;">
+                            <div style="position: relative;">
+                                <img src="{% static 'assets/images/about.jpg' %}" alt="" style="height: 30%; width: 79%;">
+                        
+                                <!-- Absolute positioning for text overlay -->
+                                <h3 style="position: absolute; top: 10px; left: 80px; color: red; padding: 5px;margin-left:35%;margin-top:5%;">
+                                    streeboutique
+                                </h3>
+                        
+                                <!-- Play button overlay -->
+                                <a href="{% static 'assets/images/slide1.gif' %}" class="venobox overlay-box" data-vbtype="gif"
+                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);border-radius:50%" >
+                                    <span><img src="{% static 'assets/images/about.jpg' %}" alt="" style="border:2px solid black;height: 100%; width: 100%;"><i class="ripple"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About section End -->
+<!-- Team Area Start -->
+<div class="team-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title text-center">
+                    <h2 class="title line-height-1">Team Member</h2>
+                    <p> We are student of MCA semster-2 of NJSMTI, Chanduvav</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-n-30px">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-lm-30px mb-lg-30px mb-md-30px">
+                <!-- Single Team -->
+                <div class="team-wrapper ">
+                    <div class="team-image overflow-hidden">
+                        <img src="{% static 'assets/images/selja.jpg' %}" alt="">
+                    </div>
+                    <div class="team-inner">
+                        <div class="team-content">
+                            <h6 class="title">Selja Chauhan</h6>
+                            <span class="sub-title">Team Member</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Team -->
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-lm-30px mb-lg-30px mb-md-30px">
+                <!-- Single Team -->
+                <div class="team-wrapper">
+                    <div class="team-image overflow-hidden">
+                        <img src="{% static 'assets/images/logo/header.png' %}" alt="" style="margin-top:20%;margin-left:10%;eight:300px;width:300px">
+                        
+                    </div>
+                    
+                </div>
+                <!-- Single Team -->
+            </div>
+            <div class="col-xl-4 col-lg-4 col-sm-6 col-md-6 mb-lm-30px ">
+                <!-- Single Team -->
+                <div class="team-wrapper">
+                    <div class="team-image overflow-hidden">
+                        <img src="{% static 'assets/images/kinjal.jpg' %}" alt="">
+                        
+                    </div>
+                    <div class="team-inner">
+                        <div class="team-content">
+                            <h6 class="title">Kinjal Kansara</h6>
+                            <span class="sub-title">Team Member</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Team -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team Area End -->
+<!-- Feature Area Srart -->
+<div class="feature-area pt-100px pb-100px">
+    <div class="container">
+        <div class="feature-wrapper">
+            <div class="single-feture-col mb-md-30px mb-lm-30px">
+                <!-- single item -->
+                <div class="single-feature" >
+                    <div class="feature-icon" style="background:#cacfd2">
+                        <img src="{%static 'assets/images/24-hours-day-night.png'%} " alt="" height=50 width=50>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">24/7 Hour services</h4>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- single item -->
+            <div class="single-feture-col mb-md-30px mb-lm-30px">
+                <div class="single-feature">
+                    <div class="feature-icon" style="background:#cacfd2">
+                        <img src="{%static 'assets/images/cod.png'%} " alt="" height=50 width=50>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Case On Delivery on Each Item</h4>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- single item -->
+            <div class="single-feture-col">
+                <div class="single-feature">
+                    <div class="feature-icon" style="background:#cacfd2">
+                        <img src="{%static 'assets/images/cancel.png'%} " alt="" height=50 width=50>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="title">Easy to Order Cancel</h4>
+                        
+                    </div>
+                </div>
+                <!-- single item -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature Area End -->
+
+        
+
+
+{% endblock %}

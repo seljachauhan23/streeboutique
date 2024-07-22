@@ -1,0 +1,205 @@
+{% extends "main/header_footer.html" %}
+
+{% block content %}
+
+
+
+<Style>
+
+    .error
+    {
+        color:red;
+        font-size:18px;     
+    }
+
+    .btn{
+        color: #002D62;
+        background: white;
+        border: 2px solid #002D62;
+        width: 100%;
+        margin-top:3%;
+    }
+
+    .btn:hover{
+        background:#002D62;
+        color: white;
+    }
+
+</style>
+
+
+
+    <form method="post" action="{% url 'place_order' %}">
+        {% csrf_token %}
+        <!-- checkout area start -->
+        <div class="checkout-area pt-100px pb-100px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="billing-info-wrap">
+                            <h3>Billing Details</h3>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-4">
+                                        <label>First Name</label>
+                                        <input type="text" value="{{user.first_name}}" name="fname" readonly/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-4">
+                                        <label>Last Name</label>
+                                        <input type="text" value="{{user.last_name}}" name="lname" readonly/>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-12">
+                                    <div class="billing-info mb-4">
+                                        <label>Country</label>
+                                        <input type="text"  name="country" value="India" readonly />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="billing-info mb-4">
+                                        <label>Street Address</label>
+                                        <input class="billing-address" placeholder="House number and street name" type="text" name="address"/>
+                                        <input placeholder="Apartment, suite, unit etc." type="text" name="address" />
+                                        {% if error.address %}
+                                            <span class="error">{{error.address}}</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="billing-info mb-4">
+                                        <label>Town / City</label>
+                                        <input type="text" name="city" />
+                                        {% if error.city %}
+                                            <span class="error">{{error.city}}</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-4">
+                                        <label>State</label>
+                                        <input type="text" name="state" />
+                                        {% if error.state %}
+                                            <span class="error">{{error.state}}</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-4">
+                                        <label>ZIP</label>
+                                        <input type="text" name="zip" />
+                                        {% if error.zip %}
+                                            <span class="error">{{error.zip}}</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-4">
+                                        <label>Phone</label>
+                                        <input type="text" name="phone" />
+                                        {% if error.phone %}
+                                            <span class="error">{{error.phone}}</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-4">
+                                        <label>Email Address</label>
+                                        <input type="text" value="{{user.email}}" readonly/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="additional-info-wrap">
+                                <h4>Additional information</h4>
+                                <div class="additional-info">
+                                    <label>Order notes</label>
+                                    <textarea placeholder="Notes about your order, e.g. special notes for delivery. " name="message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mt-md-30px mt-lm-30px ">
+                        <div class="your-order-area">
+                            <h3>Your order</h3>
+                            <div class="your-order-wrap gray-bg-4">
+                                <div class="your-order-product-info">
+                                    <div class="your-order-top">
+                                        <ul>
+                                            <li>Product</li>
+                                            <li>Total</li>
+                                        </ul>
+                                    </div>
+                                    <div class="your-order-middle">
+                                        <ul>
+                                            {% for cart in cart %}
+
+                                            <li><span class="order-middle-left">{{cart.name | truncatewords:4}} X {{cart.quantity}}</span> <span
+                                                class="order-price">Rs.{{ cart.sbt }}</span></li>
+
+                                             {% endfor %}   
+                                        </ul>
+                                    </div>
+                                    <div class="your-order-bottom">
+                                        <ul>
+                                            <li class="your-order-shipping">Shipping charge</li><br>
+                                            <li>Rs.100</li>
+                                        </ul>
+                                        <ul>
+                                            <li class="your-order-shipping">Tax</li><br>
+                                            <li>(20%) {{ gst }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="your-order-total">
+                                        <ul>
+                                            <li class="order-total">Total Rs.</li>
+                                            
+                                            <li>
+                                                <input type="number" name="amount" value="{{ mainSubTotal }}" readonly>
+                                            </li>
+                                            
+                                        
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="payment-accordion element-mrg">
+                                        <div id="faq" class="panel-group">
+                                            <div class="panel panel-default single-my-account m-0">
+                                                <div class="panel-heading my-account-title">
+                                                    <h4 class="panel-title"><a data-bs-toggle="collapse" href="#my-account-3">Cash on delivery</a></h4>
+                                                </div>
+                                                <div id="my-account-3" class="panel-collapse collapse" data-bs-parent="#faq">
+                                                    <div class="panel-body">
+                                                        <p>Please send a check to Store Name, Store Street, Store Town,
+                                                            Store State / County, Store Postcode.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Place-order mt-25">
+                                <button  type="submit" class="btn">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- checkout area end -->
+
+    </form>
+
+    {% comment %} <script>
+        window.onload = function() {
+            var calculatedAmount = "{{ cart_total_amount|add:100|add:50 }}"; // Fetch calculated amount from Django template
+            var inputElement = document.getElementById('amount');
+            inputElement.value = calculatedAmount; // Set the value of the input field
+        };
+    </script> {% endcomment %}
+
+{% endblock %}

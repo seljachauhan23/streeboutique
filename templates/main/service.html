@@ -1,0 +1,55 @@
+{% extends "main/header_footer.html" %}
+
+{% block content %}
+
+{% load static %}
+
+<style>
+
+    img {
+        height: 20%;
+        width: 20%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        border-radius: 50%; /* Apply circular border */
+        object-fit: cover; /* Ensure the image fills the circle */
+    }
+</style>
+
+<div class="breadcrumb-area" data-bg-image="{% static 'assets/images/shopping.gif' %}">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="breadcrumb-title">Services</h2>
+                <!-- breadcrumb-list start -->
+                <ul class="breadcrumb-list">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item active">Services</li>
+                </ul>
+                <!-- breadcrumb-list end -->
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- service area start -->
+<div style="height:auto;width:70%;margin-left:15%">
+
+<p>
+    <center>
+        At StreeBoutique, we're dedicated to providing exceptional service that celebrates your unique style and ensures you feel confident and comfortable every step of the way.
+    </center>
+</p>
+</div><br><br><br>
+ <div style="display: flex; justify-content: center;">
+    <img src="{% static 'assets/images/7.png' %}">
+    <img src="{% static 'assets/images/8.png' %}">
+    <img src="{% static 'assets/images/9.png' %}">
+</div>
+<div style="display: flex; justify-content: center;">
+    <img src="{% static 'assets/images/10.png' %}">
+    <img src="{% static 'assets/images/11.png' %}">
+</div>
+
+  <!-- service area end -->
+
+{% endblock %}
