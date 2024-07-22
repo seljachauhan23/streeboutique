@@ -1,1 +1,4 @@
+* text=auto
 settings.py
+*.sqlite3
+*.db
